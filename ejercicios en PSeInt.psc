@@ -1,7 +1,6 @@
-
 funcion ejercicio1
 	Definir letra Como Caracter
-	Escribir "Ingresa un car?cter"
+	Escribir "Ingresa un caracter"
 	leer letra
 	si letra  == "a" o letra == "e" o letra == "i" o letra == "o" o letra == "u" Entonces
 		Escribir "El caracter ",letra," es una vocal"
@@ -167,7 +166,7 @@ funcion ejercicio8
 	
 	Definir total Como Real
 	
-	escribir " ingrese una cantidad de l?pices"
+	escribir " ingrese una cantidad de lapices"
 	
 	leer cantidad
 	
@@ -206,7 +205,7 @@ FinFuncion
 Funcion ejecicio10
 	definir n Como Entero
 	definir total Como Real
-	Escribir "Ingresa el n?mero de platillos"
+	Escribir "Ingresa el numero de platillos"
 	leer n
 	si n > 300 Entonces
 		total = 75.00 * n
@@ -222,7 +221,7 @@ FinFuncion
 
 
 funcion ejercicio11
-	Definir kilos, tama?o Como Entero
+	Definir kilos, tamaño Como Entero
 	Definir tipo Como Caracter
 	Definir total, precio Como Real
 	Escribir "Ingresa los kilos de uvas"
@@ -238,17 +237,17 @@ funcion ejercicio11
 	leer tipo
 	
 	Escribir "Ingresa el tama?o de la uva: 1 o 2"
-    leer tama�o
+    leer tamaño
 	
 	si tipo = "A" Entonces
-        si tama?o == 1 Entonces
+        si tamaño == 1 Entonces
 			precio = precio + 20
 			
 		SiNo
 			precio = precio + 30
 	    FinSi
 	SiNo
-		si tama?o = 1 Entonces
+		si tamaño = 1 Entonces
 			precio = precio - 30
 	    SiNo
 			precio = precio - 50
@@ -292,7 +291,7 @@ Funcion ejercicio13
 	Definir kilometro Como Entero
 	Definir total, precio como real
 	
-	Escribir "Selecciona un tipo autob?s: A - B - C"
+	Escribir "Selecciona un tipo autobus: A - B - C"
 	leer tipo
 	
 	Escribir "Ingresa los kil?metros a recorrer"
@@ -313,7 +312,7 @@ Funcion ejercicio13
 			FinSi
 		FinSi
 	SiNo
-		Escribir "Ingresa un tipo de Autob?s correcto"
+		Escribir "Ingresa un tipo de Autobus correcto"
 	FinSi
 	si num < 20 Entonces
 		total = 20 * precio
@@ -406,7 +405,7 @@ FinFuncion
 funcion ejercicio17
 	Definir materia_prima, mano_obra, gasto_fabricacion, costo_produccion, precio_venta Como Real
 	Definir clave Como Entero
-	Escribir "Ingresa la clave del art?culo"
+	Escribir "Ingresa la clave del articulo"
 	leer clave
 	si clave >= 1 y clave <= 6 Entonces
 		Escribir "Ingresa el costo de la materia prima"
@@ -447,7 +446,7 @@ FinFuncion
 Funcion ejercicio18
 	Definir limite, aumento Como Real
 	Definir tipo Como Entero
-	Escribir "Ingresa el limite del cr?dito"
+	Escribir "Ingresa el limite del credito"
 	leer limite
 	Escribir "Ingresa el tipo de tarjeta"
 	leer tipo
@@ -467,8 +466,8 @@ Funcion ejercicio18
 			FinSi
 		FinSi
 	FinSi
-	Escribir "El aumento del cr?dito es: ",aumento
-	Escribir "El nuevo l?mite del cr?dito es: ",limite + aumento
+	Escribir "El aumento del credito es: ",aumento
+	Escribir "El nuevo limite del credito es: ",limite + aumento
 FinFuncion
 
 funcion ejercicio19
@@ -520,7 +519,7 @@ funcion ejercicio19
 				FinSi
 				
 			FinSi
-			Escribir "El cobro por el envi? del paquete es: ",costo
+			Escribir "El cobro por el envio del paquete es: ",costo
 			Escribir "El paquete tiene un peso de: ",peso," kilos"
 			Escribir "El paquete no se puede enviar a esa zona"
 		SiNo
@@ -617,7 +616,7 @@ funcion ejercicio22
 FinFuncion
 
 funcion ejercicio23
-	//	Realizar un programa que ingrese un n�mero presentar un mensaje equivalente a los d�as
+	//	Realizar un programa que ingrese un número presentar un mensaje equivalente a los días
 //	de la semana
 	definir n como entero
 	escribir "ingrese un numero del 1 al 7"
@@ -766,7 +765,7 @@ funcion ejercicio30
 	Definir x, a, b, c, n Como Entero
 	
 	Definir venta, total1, total2, total3 Como Real
-	Escribir "Ingresa el n?mero de ventas"
+	Escribir "Ingresa el numero de ventas"
 	Leer n
 	x = 1
 	total1 = 0
@@ -844,7 +843,102 @@ funcion ejercicio31
 FinFuncion
 
 
+funcion ejercicio32
+	//Se dispone de los sueldos y categorias de los profesores de la unemi. 
+	//segun la categoria estos reciben un bono adicional de porcentaje al sueldo:
+	//categoria="Auxiliar" incremento del 10%
+	//categoria="Agregado" incremento del 20%
+	//categoria="principal" incremento del 50%
+	//Se pide obtener el promedio de los sueldos y del bono de cada categoria
+	//El programa termina cuando se ingresa una categoria inexistente
+	Escribir "-** Sueldo de los profesores de la UNEMI **-"
+	Definir sueldo como real
+	Definir categoria Como Cadena
+	Definir incremento como real
+	Definir sumasueldo como real
+	Definir sumabono, sumaabono como real
+	Definir promediosueldo como real
+	Definir promedioabono como real
+	Definir contador como entero
+	Definir respuesta Como Caracter
+	sumasueldo<-0
+	sumabono<-0
+	contador<-0
+	sumaabono<-0
+	Repetir
+		Escribir "Especifique el sueldo del profesor:"
+		Leer sueldo
+		Escribir "Elija la categoría:"
+		Escribir "Axiliar = X"
+		Escribir "Agregado = A"
+		Escribir "Principal = P"
+		Leer categoria
+		si Mayusculas(categoria) ="X" o Mayusculas(categoria) ="A" o Mayusculas(categoria) ="P"
+			Si categoria = "X" Entonces
+				incremento <- 1.1
+			SiNo
+				Si categoria = "A" Entonces
+					incremento <- 1.2
+				SiNo
+					incremento <- 1.5
+				FinSi
+			FinSi
+			sumasueldo <- sumasueldo + sueldo
+			sumabono <- sumabono + incremento * sueldo
+			contador <-contador + 1
+		FinSi
+		Hasta que	Mayusculas(categoria) <>"X" y Mayusculas(categoria) <>"A" y Mayusculas(categoria) <>"P"
+		
+		si contador > 0 Entonces
+			promediosueldo <-sumasueldo / contador
+			promedioabono <- sumaabono / contador
+		FinSi
+		Escribir "El promedio de sueldo de todos los profesores es: $", promediosueldo
+		Escribir "El promedio de abonos de todos los profesores es: $", promedioabono
+FinFuncion
 
+funcion ejercicio33
+	//Dado una serie de n cantidad de viajes dado cada pasaje y su recorrido determinar
+	//el precio de cada pasaje segun el recorrido en kilometros = 0
+	//si el recorrido es hasta 100 km el pasaje no tiene incremento
+	//si el reccorido es mas de 100 km el pasaje tiene un incremento
+	//del 20%. Presentar el promedio y la cantidad de pasajes con recorrido
+	//hasta 100km y mayor de 100 km.
+	
+    Definir n, i Como Entero
+    Definir recorrido, precioPasaje, promedio, totalPasajesHasta100km, totalPasajesMasDe100km Como Real
+	
+    promedio <- 0
+    totalPasajesHasta100km <- 0
+    totalPasajesMasDe100km <- 0
+	
+    Escribir "Ingrese la cantidad de viajes (n): "
+    Leer n
+	
+    Para i <- 1 Hasta n Hacer
+        Escribir "Viaje ", i, ":"
+        Escribir "Ingrese el recorrido en kilómetros: "
+        Leer recorrido
+		
+        Si recorrido <= 100 Entonces
+            precioPasaje <- recorrido
+            totalPasajesHasta100km <- totalPasajesHasta100km + 1
+        Sino
+            precioPasaje <- recorrido * 1.20  // Incremento del 20%
+            totalPasajesMasDe100km <- totalPasajesMasDe100km + 1
+        FinSi
+		
+        promedio <- promedio + precioPasaje
+		
+        Escribir "Precio del pasaje: $", precioPasaje
+    FinPara
+	
+    promedio <- promedio / n
+	
+    Escribir "Promedio de precios de pasajes: $", promedio
+    Escribir "Cantidad de pasajes hasta 100 km: ", totalPasajesHasta100km
+    Escribir "Cantidad de pasajes más de 100 km: ", totalPasajesMasDe100km
+FinFuncion
 
 funcion ejercicio34
 	Definir a,b Como Entero
@@ -878,6 +972,40 @@ funcion ejercicio34
 FinFuncion
 
 
+funcion ejercicio35
+	//Dada una serie de números positivos lea y presente el numero.
+	//El algoritmo debe terminar con un valor negativo que no se debe presentar.
+	//Finalmente se desea obtener la cantidad y el total de los números positivos
+	//múltiplos de 3
+	
+	
+    Definir numero, cantidadMultiplos3, totalMultiplos3 Como Entero
+	
+    cantidadMultiplos3 <- 0
+    totalMultiplos3 <- 0
+	
+    Mientras Verdadero Hacer
+        Escribir "Ingrese un número positivo (o un número negativo para terminar): "
+        Leer numero
+		
+        Si numero < 0 Entonces
+            Segun cantidadMultiplos3
+                Caso 0:
+                    Escribir "No se ingresaron números positivos múltiplos de 3."
+                De Otro Modo:
+                    Escribir "Cantidad de números positivos múltiplos de 3: ", cantidadMultiplos3
+                    Escribir "Total de números positivos múltiplos de 3: ", totalMultiplos3
+            FinSegun
+            
+        Sino Si numero MOD 3 = 0 Entonces
+				cantidadMultiplos3 <- cantidadMultiplos3 + 1
+				totalMultiplos3 <- totalMultiplos3 + numero
+			FinSi
+		FinSi
+		
+	FinMientras
+FinFuncion
+
 
 Algoritmo Resolver_los_siguientes_ejercicios_en_PSeInt
 	ejercicio1()
@@ -899,7 +1027,9 @@ Algoritmo Resolver_los_siguientes_ejercicios_en_PSeInt
 	ejercicio17()
 	ejercicio18()
 	ejercicio19()
-	ejercicio29()
+	ejercicio20()
+	ejercicio21()
+	ejercicio22()
 	ejercicio23()
 	ejercicio24()
 	ejercicio25()
@@ -909,5 +1039,9 @@ Algoritmo Resolver_los_siguientes_ejercicios_en_PSeInt
 	ejercicio29()
 	ejercicio30()
 	ejercicio31()
+	ejercicio32()
+	ejercicio33()
 	ejercicio34()
+	ejercicio35()
 FinAlgoritmo
+
